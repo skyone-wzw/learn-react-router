@@ -1,4 +1,4 @@
-import {Switch, Route, Link} from "react-router-dom";
+import {Switch, Route, NavLink} from "react-router-dom";
 import User from "./user";
 import Detail from "./detail";
 
@@ -8,9 +8,9 @@ function Base({ match }) {
             <h1>基本路由</h1>
             <nav>
                 <ul>
-                    <li><Link to={`${match.path}`}>主页</Link></li>
-                    <li><Link to={`${match.path}/user`}>用户页</Link></li>
-                    <li><Link to={`${match.path}/detail`}>详情页</Link></li>
+                    <li><NavLink exact to={`${match.path}`}>主页</NavLink></li>
+                    <li><NavLink to={`${match.path}/user`}>用户页</NavLink></li>
+                    <li><NavLink to={`${match.path}/detail`}>详情页</NavLink></li>
                 </ul>
             </nav>
             <Switch>

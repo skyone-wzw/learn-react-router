@@ -1,9 +1,10 @@
-import {Link, Redirect, Route, Switch, withRouter} from "react-router-dom";
+import {NavLink, Redirect, Route, Switch, withRouter} from "react-router-dom";
 import Base from "./pages/base/base";
 import Home from "./pages/home/home";
 import NotFound from "./pages/notFound/notFound";
 import {useState} from "react";
 import Param from "./pages/param/param";
+import './default.css';
 
 function App({history}) {
     const [path, setPath] = useState("");
@@ -11,9 +12,9 @@ function App({history}) {
         <>
             <nav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/base-route">基本路由</Link></li>
-                    <li><Link to="/path-param">路径传参</Link></li>
+                    <li><NavLink exact to="/">Home</NavLink></li>
+                    <li><NavLink to="/base-route">基本路由</NavLink></li>
+                    <li><NavLink to="/path-param">路径传参</NavLink></li>
                     <li>
                         <input type="text" onChange={(event) => {
                             setPath(event.target.value)
